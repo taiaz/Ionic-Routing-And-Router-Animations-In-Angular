@@ -1,0 +1,57 @@
+<!-- <ion-header translucent="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="'/'"></ion-back-button>
+        </ion-buttons>
+        <ion-title>New Favourite</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content fullscreen="true">
+    <ion-header collapse="condense" translucent="true">
+        <ion-toolbar>
+            <ion-title size="large">New Favourite</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size-xs="12" size-md="6" size-xl="6">
+                <app-gallery [images]="images"></app-gallery>
+                <hr>
+                <app-camera (capture)="onCapture($event)"></app-camera>
+            </ion-col>
+            <ion-col size-xs="12" size-md="6" size-xl="6">
+                <form [formGroup]="form">
+                    <ion-button (click)="paste()">Paste From Clipboard</ion-button>
+                    <ion-item>
+                        <ion-label position="floating">Title<ion-text color="danger">*</ion-text></ion-label>
+                        <ion-input formControlName="title"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Address<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <ion-input formControlName="address"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Short Description<ion-text color="danger">*</ion-text>
+                        </ion-label>
+                        <ion-textarea formControlName="shortDescription"></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Date</ion-label>
+                        <ion-datetime formControlName="date" value="2019-10-01T15:43:40.394Z" display-timezone="utc">
+                        </ion-datetime>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Draft</ion-label>
+                        <ion-checkbox></ion-checkbox>
+                    </ion-item>
+                </form>
+                <ion-button [disabled]="form.invalid" (click)="submit()">Add Favourite</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>

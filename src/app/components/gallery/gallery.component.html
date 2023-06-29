@@ -1,0 +1,13 @@
+<ion-slides [pager]="true" #slider>
+    <ion-slide *ngFor="let image of images">
+        <ion-img [src]="image.path"></ion-img>
+    </ion-slide>
+</ion-slides>
+<ng-container *ngIf="images && images.length">
+    <ion-button fill="outline" size="small" color="tertiary" (click)="slider.slidePrev()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-button fill="outline" size="small" color="tertiary" (click)="slider.slideNext()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+</ng-container>

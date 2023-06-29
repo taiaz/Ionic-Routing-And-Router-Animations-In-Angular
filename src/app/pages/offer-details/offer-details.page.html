@@ -1,0 +1,45 @@
+<ion-header translucent="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="'/'"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{item?.title}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+    <ion-header collapse="condense" translucent="true">
+        <ion-toolbar>
+            <ion-title size="large">{{item?.title}}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-grid>
+        <ion-row>
+            <ion-col size-xs="12" size-md="6" size-xl="6">
+               <app-gallery [images]="images"></app-gallery>
+            </ion-col>
+            <ion-col size-sm="12" size-md="6">
+                <ion-text color="dark">
+                    <h2>
+                        {{item?.shortDescription}}
+                    </h2>
+                </ion-text>
+                <p *ngIf="item && item.date">{{item.date}}</p>
+                <p>{{item?.address}}</p>
+                <p>Offer: #{{item?.offerId}}</p>
+                <hr/>
+                <ion-item>
+                    <app-camera (capture)="onCapture($event)"></app-camera>
+                </ion-item>
+                <ion-item>
+                    <ion-button (click)="share()">Tell a friend</ion-button>
+                </ion-item>
+
+                <ion-item>
+                    <ion-button (click)="notify()">Notification</ion-button>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

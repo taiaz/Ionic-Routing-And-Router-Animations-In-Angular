@@ -1,0 +1,6 @@
+<ion-button (click)="takePictureCapacitor()">Take Capacitor Picture</ion-button>
+
+<ion-button (click)="initPictureProcess()">Take Web Picture</ion-button>
+<div style="height: 0; width: 0; opacity: 0;" hidden>
+  <input type="file" id="pwaphoto" #photoRef accept="image/x-png,image/jpeg" (change)="handleInput()">
+</div>

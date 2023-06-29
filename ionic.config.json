@@ -1,0 +1,7 @@
+{
+  "name": "tt-ionic-immo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

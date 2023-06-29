@@ -1,0 +1,23 @@
+<!-- <ion-header translucent="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="'/'"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Search</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content fullscreen="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Search</ion-title>
+        </ion-toolbar>
+        <!-- Put serach here  -->
+    </ion-header>
+
+    <ion-toolbar>
+        <ion-searchbar (ionChange)="filter$.next($event);" inputmode="search" animated [showCancelButton]="'focus'">
+        </ion-searchbar>
+    </ion-toolbar>
+    <app-item-listing [items]="filteredItems$ | async"></app-item-listing>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-router-outlet id="main"></ion-router-outlet>
+<!-- ion tabs -->
+<ion-tabs>
+    <!-- ion tab bar if mobile to switch ngtemplate with layout context -->
+    <ion-tab-bar slot="top" *ngIf="!(mobile$ | async)" style="justify-content: flex-start;">
+        <ng-content *ngTemplateOutlet="nav; context: {layout: 'icon-start'}"></ng-content>
+    </ion-tab-bar>
+    <ion-tab-bar slot="bottom" *ngIf="mobile$ | async">
+        <ng-content *ngTemplateOutlet="nav; context: {layout: 'label-hide'}"></ng-content>
+    </ion-tab-bar>
+</ion-tabs>
+
+
+<!-- define template with layout context -->
+<!-- display menu button -->
+<!-- ion-tab-button > ion-icon + ion-label -->
+<ng-template #nav let-layout="layout">
+    <ion-menu-button></ion-menu-button>
+    <ion-tab-button tab="home" [layout]="layout" routerDirection="forward">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="search" [layout]="layout" routerDirection="forward">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>Search</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="favourites" [layout]="layout" routerDirection="forward">
+        <ion-icon name="bookmarks"></ion-icon>
+        <ion-label>Favourites</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="new-offer" [layout]="layout" routerDirection="forward">
+        <ion-icon name="medkit"></ion-icon>
+        <ion-label>New Offer</ion-label>
+    </ion-tab-button>
+</ng-template>

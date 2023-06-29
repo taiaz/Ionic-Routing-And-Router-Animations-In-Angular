@@ -1,0 +1,10 @@
+<ion-content fullscreen="true">
+    <ion-header collapse="condense">
+        <ion-toolbar fixed>
+            <ion-title size="large">Favourites</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-grid fixed>
+    <app-item-grid [items]="items$ | async"></app-item-grid>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-tabs>
+    <ion-tab-bar slot="top" *ngIf="!mobile">
+        <ng-content *ngTemplateOutlet="nav; context: {layout: 'icon-start'}"></ng-content>
+    </ion-tab-bar>
+    <ion-tab-bar slot="bottom" *ngIf="mobile">
+        <ng-content *ngTemplateOutlet="nav; context: {layout: 'label-hide'}"></ng-content>
+    </ion-tab-bar>
+</ion-tabs>
+
+
+<ng-template #nav let-layout="layout">
+    <ion-tab-button tab="home" [layout]="layout">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="search" [layout]="layout">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>Search</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="favourites" [layout]="layout">
+        <ion-icon name="bookmarks"></ion-icon>
+        <ion-label>Favourites</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="new-offer" [layout]="layout">
+        <ion-icon name="medkit"></ion-icon>
+        <ion-label>New Offer</ion-label>
+    </ion-tab-button>
+</ng-template>

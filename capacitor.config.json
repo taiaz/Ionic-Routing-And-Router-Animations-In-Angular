@@ -1,0 +1,17 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "tt-ionic-immo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "server": {
+    "url": "http://10.2.185.2:8100",
+    "originalUrl": "http://192.168.178.46:8100"
+  }
+}
